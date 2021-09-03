@@ -1,26 +1,32 @@
 @import '@/assets/styles/variables.less';
 
-.layout {
-  &-sidebar {
+.layout-wrap {
+  min-height: 100%;
+
+  .site-sider {
     position: fixed;
-    left: 0;
     top: 0;
-    width: @sider-width;
-    height: 100%;
-    color: #fff;
-    background-color: #001529;
+    left: 0;
+    z-index: 100;
+    overflow: auto;
+    height: 100vh;
   }
 
-  &-container {
-    margin-left: @sider-width;
-  }
+  .site-layout {
+    margin-left: 200px;
+    &-header {
+      // position: fixed;
+      // left: 200px;
+      // top: 0;
+      // z-index: 1;
+      // width: 100%;
+      padding: 0 15px;
+      background: #fff;
+    }
 
-  &-header {
-    height: @header-height;
-    background-color: #fff;
+    &-content {
+      overflow: initial;
+      margin: 24px 16px 0;
+    }
   }
 }
-
-// .layout-wrap {
-//   height: 100%;
-// }

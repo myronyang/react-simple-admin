@@ -1,31 +1,14 @@
 import React from 'react'
 import { Menu } from 'antd'
 import { Link } from 'react-router-dom'
-
-import {
-  MenuUnfoldOutlined,
-  MenuOutlined,
-  UserOutlined,
-  TeamOutlined,
-  DashboardOutlined,
-  ReadOutlined
-} from '@ant-design/icons'
+import * as Icons from '@ant-design/icons'
 import { IRoute, IRouteMeta } from '@/router/types'
 
 const { SubMenu, Item } = Menu
 
-const iconMap: { [prop: string]: any } = {
-  MenuUnfoldOutlined: <MenuUnfoldOutlined />,
-  MenuOutlined: <MenuOutlined />,
-  UserOutlined: <UserOutlined />,
-  TeamOutlined: <TeamOutlined />,
-  DashboardOutlined: <DashboardOutlined />,
-  ReadOutlined: <ReadOutlined />
-}
-
 const renderTitle = (meta: IRouteMeta) => (
   <span className="menu-item-inner">
-    {meta.icon && iconMap[meta.icon]}
+    {meta.icon && React.createElement((Icons as any)[meta.icon])}
     <span className="menu-title"> {meta.title} </span>
   </span>
 )

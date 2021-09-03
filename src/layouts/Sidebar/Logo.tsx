@@ -6,7 +6,7 @@ interface LogoProps {
 }
 
 const Logo = ({ opened, layout }: LogoProps) => {
-  return <div className="logo-wrap">LOGO</div>
+  return <div className="site-sider__logo">LOGO</div>
 }
 
 export default Logo
