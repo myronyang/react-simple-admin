@@ -13,7 +13,7 @@ interface AsyncRoutesProps {
 const SYS_ROUTES = [
   {
     authType: 'menuAuth',
-    icon: 'MailOutlined',
+    icon: 'InstagramFilled',
     id: '1400265859859210242',
     pid: null,
     path: '/goods',
@@ -22,7 +22,6 @@ const SYS_ROUTES = [
   },
   {
     authType: 'menuAuth',
-    icon: 'MailOutlined',
     id: '1400265859859210898',
     pid: '1400265859859210242',
     path: '/goods/detail',
@@ -31,7 +30,7 @@ const SYS_ROUTES = [
   },
   {
     authType: 'menuAuth',
-    icon: 'MailOutlined',
+    icon: 'FacebookFilled',
     id: '1400265859859210243',
     pid: null,
     path: '/order',
@@ -40,7 +39,7 @@ const SYS_ROUTES = [
   },
   {
     authType: 'menuAuth',
-    icon: 'MailOutlined',
+    icon: 'LinkedinFilled',
     id: '1400265859859210123',
     pid: null,
     path: '/page',
@@ -49,7 +48,6 @@ const SYS_ROUTES = [
   },
   {
     authType: 'menuAuth',
-    icon: 'MailOutlined',
     id: '1400265859859210456',
     pid: '1400265859859210123',
     path: '/page/page1',
@@ -58,7 +56,6 @@ const SYS_ROUTES = [
   },
   {
     authType: 'menuAuth',
-    icon: 'MailOutlined',
     id: '1400265859859210789',
     pid: '1400265859859210123',
     path: '/page/page2',
