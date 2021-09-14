@@ -20,14 +20,14 @@ const SYS_ROUTES = [
     sort: 2,
     title: '商品管理'
   },
-  {
-    authType: 'menuAuth',
-    id: '1400265859859210898',
-    pid: '1400265859859210242',
-    path: '/goods/detail',
-    sort: null,
-    title: '商品详情'
-  },
+  // {
+  //   authType: 'menuAuth',
+  //   id: '1400265859859210898',
+  //   pid: '1400265859859210242',
+  //   path: '/goods/detail',
+  //   sort: null,
+  //   title: '商品详情'
+  // },
   {
     authType: 'menuAuth',
     icon: 'FacebookFilled',
@@ -64,10 +64,9 @@ const SYS_ROUTES = [
   },
   {
     authType: 'menuAuth',
-    icon: 'el-icon-user',
     id: '140026585985921785',
     pid: '1400265859859210789',
-    path: '/page/page2/page',
+    path: '/page/page2/page3',
     sort: 1,
     title: '页面3'
   }

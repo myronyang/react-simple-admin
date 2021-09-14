@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { useSelector } from 'react-redux'
 import classnames from 'classnames'
-import MainRoutes from './RenderRoutes'
+import RenderRoutes from './RenderRoutes'
 import Sidebar from '@/layouts/Sidebar'
 import { IStoreState } from '@/store/types'
 import { SettingState } from '@/store/modules/setting'
@@ -10,8 +10,8 @@ import { Layout, Spin } from 'antd'
 
 const { Header, Content, Footer } = Layout
 
-const siderLayout = () => {
-  const { layout, colorWeak, fixedHeader, contentWidth }: SettingState =
+const MainContent = () => {
+  const { layout, colorWeak, fixedHeader, contentWidth }: SettingState = 
     useSelector((state: IStoreState) => state.settings)
 
   return (
@@ -34,7 +34,7 @@ const siderLayout = () => {
         </Header>
         <Content className="site-layout-content">
           <Suspense fallback={<Spin size="large" className="layout-loading" />}>
-            <MainRoutes />
+            <RenderRoutes />
           </Suspense>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
@@ -45,4 +45,4 @@ const siderLayout = () => {
   )
 }
 
-export default siderLayout
+export default MainContent

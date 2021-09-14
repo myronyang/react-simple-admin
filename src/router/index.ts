@@ -53,7 +53,7 @@ const routes: IRoute[] = [
             component: React.lazy(() => import('../views/Page/Page2')),
             children: [
               {
-                path: '/page/page2/page',
+                path: '/page/page2/page3',
                 meta: {
                   title: '三级路由',
                   icon: 'page3',

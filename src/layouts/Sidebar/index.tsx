@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import classnames from 'classnames'
 import Logo from './Logo'
-import renderMenuItems from './MenuItems'
+import { renderMenuItems } from './MenuItems'
 import MenuFold from './MenuFold'
 import { Layout, Menu } from 'antd'
 
@@ -51,7 +51,6 @@ const SideBar = () => {
         defaultOpenKeys={[pathname]}
         mode={layout === 'side' ? 'inline' : 'horizontal'}
         theme={theme}
-        inlineCollapsed={collapsed}
       >
         {routes.map((menu: IRoute) => renderMenuItems(menu))}
       </Menu>

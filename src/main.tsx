@@ -5,7 +5,7 @@ import store from './store'
 import { ConfigProvider } from 'antd'
 import zhCN from 'antd/es/locale/zh_CN'
 import Container from '@/layouts/Container'
-import './assets/styles/index.less'
+// import './assets/styles/index.less'
 
 ReactDOM.render(
   <Provider store={store}>

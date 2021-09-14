@@ -22,7 +22,11 @@ const renderMenuRoute = (menu: IRoute) => (
 const renderSubMenu = (menu: IRoute) => (
   <SubMenu title={renderTitle(menu.meta)} key={menu.path}>
     {menu.children!.map((item: IRoute) =>
-      item.children ? renderSubMenu(item) : renderMenuRoute(item)
+      {
+        console.log(item);
+        
+        return item.children ? renderSubMenu(item) : renderMenuRoute(item)
+      }
     )}
   </SubMenu>
 )
@@ -34,4 +38,4 @@ const renderMenuItems = (menu: IRoute) => {
   return renderMenuRoute(menu)
 }
 
-export default renderMenuItems
+export { renderMenuItems }
