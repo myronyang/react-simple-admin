@@ -7,7 +7,7 @@ const routes: IRoute[] = [
   { ...systemRoutes },
   {
     path: '/',
-    component: React.lazy(() => import('../layouts/Container/MainContent')),
+    component: React.lazy(() => import('@/layouts/Container/MainContent')),
     meta: {
       title: '系统路由',
     },
@@ -19,7 +19,7 @@ const routes: IRoute[] = [
           title: '商品管理',
           icon: 'goods',
         },
-        component: React.lazy(() => import('../views/Goods'))
+        component: React.lazy(() => import('@/views/Goods'))
       },
       {
         path: '/order',
@@ -27,7 +27,7 @@ const routes: IRoute[] = [
           title: '订单管理',
           icon: 'order',
         },
-        component: React.lazy(() => import('../views/Order'))
+        component: React.lazy(() => import('@/views/Order'))
       },
       {
         path: '/page',
@@ -42,7 +42,7 @@ const routes: IRoute[] = [
               title: '二级路由',
               icon: 'page1',
             },
-            component: React.lazy(() => import('../views/Page/Page1'))
+            component: React.lazy(() => import('@/views/Page/Page1'))
           },
           {
             path: '/page/page2',
@@ -50,7 +50,7 @@ const routes: IRoute[] = [
               title: '二级路由',
               icon: 'page2',
             },
-            component: React.lazy(() => import('../views/Page/Page2')),
+            component: React.lazy(() => import('@/views/Page/Page2')),
             children: [
               {
                 path: '/page/page2/page3',
@@ -58,7 +58,7 @@ const routes: IRoute[] = [
                   title: '三级路由',
                   icon: 'page3',
                 },
-                component: React.lazy(() => import('../views/Page/Page2/Page11'))
+                component: React.lazy(() => import('@/views/Page/Page2/Page11'))
               },
             ]
           },

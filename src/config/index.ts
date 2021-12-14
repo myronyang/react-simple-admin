@@ -53,7 +53,7 @@ const AdminConfig: Config = {
   colorWeak: false,
 
   // 项目名称
-  title: 'React Ant Admin',
+  title: '3DSim云平台',
 
   // logo
 }

@@ -7,10 +7,13 @@ export function configVitePluginImp(isBuild: boolean): Plugin[] {
       libList: [
         {
           libName: 'antd',
-          style: (name) => `antd/lib/${name}/style/index.less`
+          style: (name) => {
+            if (['row', 'col'].includes(name)) return false
+            return `antd/lib/${name}/style/index.less`
+          }
         }
       ]
-    }),
+    })
   ]
 
   return plugin as unknown as Plugin[]

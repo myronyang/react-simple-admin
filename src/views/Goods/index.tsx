@@ -1,59 +1,91 @@
 import React, { useState } from 'react'
-import { Menu, Button } from 'antd'
-import {
-  AppstoreOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  PieChartOutlined,
-  DesktopOutlined,
-  ContainerOutlined,
-  MailOutlined,
-} from '@ant-design/icons'
-
-const { SubMenu } = Menu
+import { Table } from 'antd'
 
 const Goods = (props: any) => {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name'
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address'
+    },
+    {
+      title: 'Chinese Score',
+      dataIndex: 'chinese',
+      sorter: {
+        compare: (a, b) => a.chinese - b.chinese,
+        multiple: 3
+      }
+    },
+    {
+      title: 'Math Score',
+      dataIndex: 'math',
+      sorter: {
+        compare: (a, b) => a.math - b.math,
+        multiple: 2
+      }
+    },
+    {
+      title: 'English Score',
+      dataIndex: 'english',
+      sorter: {
+        compare: (a, b) => a.english - b.english,
+        multiple: 1
+      }
+    }
+  ]
 
-  const [collapsed, setCollapsed] = useState(false)
+  const data = [
+    {
+      key: '1',
+      name: 'John Brown',
+      address: '武汉市江岸区花桥社区701',
+      chinese: 98,
+      math: 60,
+      english: 70
+    },
+    {
+      key: '2',
+      name: 'Jim Green',
+      address: '武汉市江岸区花桥社区701',
+      chinese: 98,
+      math: 66,
+      english: 89
+    },
+    {
+      key: '3',
+      name: 'Joe Black',
+      address: '武汉市江岸区花桥社区701',
+      chinese: 98,
+      math: 90,
+      english: 70
+    },
+    {
+      key: '4',
+      name: 'Jim Red',
+      address: '武汉市江岸区花桥社区701',
+      chinese: 88,
+      math: 99,
+      english: 89
+    }
+  ]
+
+  function onChange(pagination, filters, sorter, extra) {
+    console.log('params', pagination, filters, sorter, extra)
+  }
 
   return (
-    <div style={{ width: 256 }}>
-        <Button type="primary" onClick={() => {
-          setCollapsed(!collapsed)
-        }} style={{ marginBottom: 16 }}>
-          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
-        </Button>
-        <Menu
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
-          mode="inline"
-          inlineCollapsed={collapsed}
-        >
-          <Menu.Item key="1" icon={<PieChartOutlined />}>
-            Option 1
-          </Menu.Item>
-          <Menu.Item key="2" icon={<DesktopOutlined />}>
-            Option 2
-          </Menu.Item>
-          <Menu.Item key="3" icon={<ContainerOutlined />}>
-            Option 3
-          </Menu.Item>
-          <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">
-            <Menu.Item key="5">Option 5</Menu.Item>
-            <Menu.Item key="6">Option 6</Menu.Item>
-            <Menu.Item key="7">Option 7</Menu.Item>
-            <Menu.Item key="8">Option 8</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-            <Menu.Item key="9">Option 9</Menu.Item>
-            <Menu.Item key="10">Option 10</Menu.Item>
-            <SubMenu key="sub3" title="Submenu">
-              <Menu.Item key="11">Option 11</Menu.Item>
-              <Menu.Item key="12">Option 12</Menu.Item>
-            </SubMenu>
-          </SubMenu>
-        </Menu>
-      </div>
+    <div style={{ background: '#fff', padding: '10px', fontSize: '16px' }}>
+      <div style={{ marginBottom: '15px'}}>查询表格</div>
+      <Table
+        size="small"
+        columns={columns}
+        dataSource={data}
+        onChange={onChange}
+      />
+    </div>
   )
 }
 
