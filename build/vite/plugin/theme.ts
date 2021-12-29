@@ -11,12 +11,13 @@ import { getThemeColors, generateColors } from '../../conifg/themeConfig'
 import { generateModifyVars } from '../../generate/generateModifyVars'
 
 export function configThemePlugin(isBuild: boolean): Plugin[] {
+  
   const colors = generateColors({
     mixDarken,
     mixLighten,
     tinycolor
   })
-  
+
   const plugin = [
     viteThemePlugin({
       resolveSelector: (s) => {
@@ -32,6 +33,8 @@ export function configThemePlugin(isBuild: boolean): Plugin[] {
             return s
           case '.ant-select-item-option-selected:not(.ant-select-item-option-disabled)':
             return s
+            case '.zhangsan':
+              return s
           default:
             if (s.indexOf('.ant-btn') >= -1) {
               // 按钮被重新定制过，需要过滤掉class防止覆盖
@@ -46,10 +49,9 @@ export function configThemePlugin(isBuild: boolean): Plugin[] {
       preloadFiles: [
         path.resolve(
           process.cwd(),
-          'node_modules/ant-design-vue/dist/antd.less'
+          'node_modules/design/dist/antd.less'
         ),
-        //path.resolve(process.cwd(), 'node_modules/ant-design-vue/dist/antd.dark.less'),
-        path.resolve(process.cwd(), 'src/design/index.less')
+        path.resolve(process.cwd(), 'src/assets/styles/variables.less')
       ],
       filter: (id) => (isBuild ? !id.endsWith('antd.less') : true),
       // extractCss: false,
@@ -60,11 +62,8 @@ export function configThemePlugin(isBuild: boolean): Plugin[] {
         'text-color-base': '#c9d1d9',
         'component-background': '#151515',
         'heading-color': 'rgb(255 255 255 / 65%)',
-        // black: '#0e1117',
-        // #8b949e
         'text-color-secondary': '#8b949e',
         'border-color-base': '#303030',
-        // 'border-color-split': '#30363d',
         'item-active-bg': '#111b26',
         'app-content-background': '#1e1e1e',
         'tree-node-selected-bg': '#11263c',
@@ -80,7 +79,7 @@ export function configThemePlugin(isBuild: boolean): Plugin[] {
         'alert-warning-icon-color': '#d89614',
         'alert-error-border-color': '#58181c',
         'alert-error-bg-color': '#2a1215',
-        'alert-error-icon-color': '#a61d24'
+        'alert-error-icon-color': '#a61d24',
       }
     })
   ]

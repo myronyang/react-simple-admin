@@ -17,7 +17,7 @@
 
 .bd_t_1 {
   &::before {
-    border-top: 1px solid @color-row-line;
+    border-top: 1px solid @border-color-split;
     left: 0;
     top: 0;
     width: 100%;
@@ -27,7 +27,7 @@
 
 .bd_r_1 {
   &::after {
-    border-right: 1px solid @color-row-line;
+    border-right: 1px solid @border-color-split;
     top: 0;
     right: 0;
     height: 100%;
@@ -37,7 +37,7 @@
 
 .bd_b_1 {
   &::after {
-    border-bottom: 1px solid @color-row-line;
+    border-bottom: 1px solid @border-color-split;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -47,7 +47,7 @@
 
 .bd_l_1 {
   &::before {
-    border-left: 1px solid @color-row-line;
+    border-left: 1px solid @border-color-split;
     top: 0;
     left: 0;
     height: 100%;
@@ -263,21 +263,18 @@
   text-align: right;
 }
 
-.f14 {
-  font-size: 14px;
+.fs_base {
+  font-size: @font-size-base;
 }
 
-.f16 {
-  font-size: 16px;
+.fs_sm {
+  font-size: @font-size-sm;
 }
 
-.f18 {
-  font-size: 18px;
+.fs_lg {
+  font-size: @font-size-lg;
 }
 
-.f20 {
-  font-size: 20px;
-}
 
 .relative {
   position: relative;

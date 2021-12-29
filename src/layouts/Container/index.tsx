@@ -15,7 +15,7 @@ const Contaniner = () => {
               key={route.path}
               path={route.path}
               component={route.component}
-            ></Route>
+            />
           ))}
         </Switch>
       </Router>

@@ -1,3 +1,5 @@
+@import '@/assets/styles/variables.less';
+
 .site-sider {
   .ant-layout-sider-children {
     display: flex;
@@ -19,5 +21,24 @@
     line-height: 50px;
     color: #fff;
     font-size: 18px;
+  }
+
+  &-main {
+    display: flex;
+    &--side {
+      flex: 1;
+      flex-direction: column;
+    }
+    &--top {
+      .site-sider__logo {
+        flex: 0 0 100px;
+      }
+
+      .site-sider__menu {
+        flex: 1;
+        height: @layout-header-height;
+        overflow: hidden;
+      }
+    }
   }
 }

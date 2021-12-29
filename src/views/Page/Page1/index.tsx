@@ -16,7 +16,7 @@ let MODE = 'dark'
 
 const Page1 = () => {
   const onChangeColor = async () => {
-    const color = '#ff4d4f'
+    const color = '#8d66d8'
     const colors = generateColors({
       mixDarken,
       mixLighten,
@@ -25,12 +25,12 @@ const Page1 = () => {
     })
 
     return await replaceStyleVariables({
-      colorVariables: [...getThemeColors(color), ...colors]
+      colorVariables: [...getThemeColors(color), ...colors],
     })
   }
 
   const onChangeTheme = async () => {
-    const htmlRoot = document.getElementById('htmlRoot')
+    const htmlRoot = document.getElementById('root')
     if (MODE === 'dark') {
       if (!darkCssIsReady) {
         await loadDarkThemeCss()

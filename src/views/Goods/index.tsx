@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Panel from '@/layouts/Panel'
 import { Table } from 'antd'
 
 const Goods = (props: any) => {
@@ -77,15 +78,14 @@ const Goods = (props: any) => {
   }
 
   return (
-    <div style={{ background: '#fff', padding: '10px', fontSize: '16px' }}>
-      <div style={{ marginBottom: '15px'}}>查询表格</div>
+    <Panel title="查询表格">
       <Table
         size="small"
         columns={columns}
         dataSource={data}
         onChange={onChange}
       />
-    </div>
+    </Panel>
   )
 }
 

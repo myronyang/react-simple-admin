@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import LoginForm from './LoginForm'
 import loginBoxBg from '@/assets/images/login-box-bg.svg'
-import AdminConfig from '@/config/index'
+import DefaultConfig from '@/config/index'
 import './index.less'
 
 const Login = () => (
@@ -12,7 +12,7 @@ const Login = () => (
         <img src={loginBoxBg} width="275" />
       </Col>
       <Col className="col-right" span={9}>
-        <p className="title">{AdminConfig.title}</p>
+        <p className="title">{DefaultConfig.title}</p>
         <LoginForm />
       </Col>
     </Row>

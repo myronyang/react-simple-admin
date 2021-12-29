@@ -22,11 +22,7 @@ const renderMenuRoute = (menu: IRoute) => (
 const renderSubMenu = (menu: IRoute) => (
   <SubMenu title={renderTitle(menu.meta)} key={menu.path}>
     {menu.children!.map((item: IRoute) =>
-      {
-        console.log(item);
-        
-        return item.children ? renderSubMenu(item) : renderMenuRoute(item)
-      }
+      item.children ? renderSubMenu(item) : renderMenuRoute(item)
     )}
   </SubMenu>
 )

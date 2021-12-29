@@ -1,0 +1,33 @@
+@import '@/assets/styles/variables.less';
+
+@select-color-item-size: 20px;
+
+.select-color {
+  overflow: hidden;
+
+  &-item {
+    float: left;
+    cursor: pointer;
+    width: @select-color-item-size;
+    height: @select-color-item-size;
+    line-height: @select-color-item-size;
+    overflow: hidden;
+    text-align: center;
+    border-radius: @border-radius-base;
+    margin-right: 8px;
+    border: 1px solid @border-color-base;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &__active {
+      font-size: 14px;
+      color: @white;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 @import '@/assets/styles/variables.less';
 
 .layout-wrap {
-  min-height: 100%;
 
   .site-sider {
     position: fixed;
@@ -13,17 +12,30 @@
   }
 
   .site-layout {
-    margin-left: 200px;
-    &-header {
-      height: 50px;
-      line-height: 50px;
-      padding: 0 15px;
-      background: #fff;
+    min-height: 100vh;
+    transition: all 0.2s;
+
+    &-nesting {
+      &.layout-nesting__fixed {
+        width: 1200px;
+        margin: 0 auto;
+      }
+    }
+
+    &__fold {
+      margin-left: 80px !important;
+    }
+
+    &--side {
+      margin-left: 200px;
+    }
+
+    &--fixed {
+      margin-top: @layout-header-height;
     }
 
     &-content {
-      overflow: initial;
-      margin: 24px 16px 0;
+      margin: @margin-lg;
     }
   }
 }

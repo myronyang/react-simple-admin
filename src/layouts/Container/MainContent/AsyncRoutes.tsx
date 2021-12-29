@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { useDispatch } from 'react-redux'
 import { Spin } from 'antd'
 import { IRoute } from '@/router/types'
-import Transition from '@/components/Transition'
+import Transition from '@/components/basic/Transition'
 import { setSideBarRoutes } from '@/store/modules/global'
 
 interface AsyncRoutesProps {

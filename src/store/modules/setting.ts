@@ -1,18 +1,14 @@
 import { Reducer } from 'redux'
 import { IAction } from '../types'
-import AdminConfig, { Config } from '@/config'
+import DefaultConfig, { Config } from '@/config'
 import { setStore, getStore } from '@/assets/scripts/utils'
 
 export interface SettingState {
-  fixedHeader: boolean
-
-  layout: Config['layout']
-
-  theme: MenuTheme
-
-  contentWidth: Config['contentWidth']
-
-  colorWeak: boolean
+  fixedHeader?: boolean
+  layout?: Config['layout']
+  theme?: MenuTheme
+  contentWidth?: Config['contentWidth']
+  collapsed?: boolean
 }
 
 type MenuTheme = 'dark' | 'light'
@@ -20,15 +16,11 @@ type MenuTheme = 'dark' | 'light'
 const SETTINGS_KEY = 'REACT-SIMPLE-SETTINGS'
 
 const defaultValues: SettingState = {
-  fixedHeader: AdminConfig.fixedHeader,
-
-  layout: AdminConfig.layout,
-
-  theme: AdminConfig.theme,
-
-  contentWidth: AdminConfig.contentWidth,
-
-  colorWeak: AdminConfig.colorWeak
+  fixedHeader: DefaultConfig.fixedHeader,
+  layout: DefaultConfig.layout,
+  theme: DefaultConfig.theme,
+  contentWidth: DefaultConfig.contentWidth,
+  collapsed: DefaultConfig.collapsed
 }
 
 const UPDATE_SETTINSG = 'UPDATE_SETTINSG'
@@ -48,6 +40,7 @@ const settingsReducer: Reducer<SettingState, IAction<any>> = (
     case UPDATE_SETTINSG:
       setStore(SETTINGS_KEY, payload)
       return {
+        ...state,
         ...payload
       }
     default:

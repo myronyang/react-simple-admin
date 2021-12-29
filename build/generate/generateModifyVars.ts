@@ -16,6 +16,7 @@ export function generateModifyVars(dark = false) {
   }
 
   const modifyVars = getThemeVariables({ dark })
+
   return {
     ...modifyVars,
     // Used for global import to avoid the need to import each style file separately
@@ -26,6 +27,8 @@ export function generateModifyVars(dark = false) {
     'primary-color': primary,
     ...primaryColorObj,
     'info-color': primary,
+    'text-color': '#c9d1d9',
+    'text-color-base': '#c9d1d9',
     'processing-color': primary,
     'success-color': '#55D187', //  Success color
     'error-color': '#ED6F6F', //  False color
