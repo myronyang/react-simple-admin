@@ -1,0 +1,37 @@
+@import '@/assets/styles/variables.less';
+
+.site-tabs-nav {
+  background: @component-background;
+  border-top: 1px solid @border-color-split;
+  border-bottom: 1px solid @border-color-split;
+
+  .tabs-nav-wrap {
+    overflow: hidden;
+    margin-bottom: 0;
+
+    .tabs-nav-item {
+      float: left;
+      height: 22px;
+      line-height: 22px;
+      padding: 0 10px;
+      color: @text-color;
+      border-right: 1px solid @border-color-split;
+      cursor: pointer;
+
+      &__active {
+        color: @primary-color;
+      }
+
+      .tab-title {
+        font-size: 12px;
+      }
+
+      .anticon-close {
+        position: relative;
+        top: -1px;
+        font-size: 9px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

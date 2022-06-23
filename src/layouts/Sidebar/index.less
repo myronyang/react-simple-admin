@@ -1,0 +1,44 @@
+@import '@/assets/styles/variables.less';
+
+.site-sider {
+  .ant-layout-sider-children {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    flex: 0 0 60px;
+  }
+
+  &__menu {
+    flex: 1;
+    overflow: hidden auto;
+  }
+
+  &__menu-Fold {
+    flex: 0 0 50px;
+    padding: 0 16px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  &-main {
+    display: flex;
+    &--side {
+      flex: 1;
+      flex-direction: column;
+    }
+    &--top {
+      .site-sider__logo {
+        flex: 0 0 100px;
+      }
+
+      .site-sider__menu {
+        flex: 1;
+        height: @layout-header-height;
+        overflow: hidden;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import '@/assets/styles/variables.less';
+
+.site-layout {
+  .site-layout-header {
+    display: flex;
+    padding: 0 @padding-lg;
+    background: @component-background;
+
+    .content-right {
+
+      .ant-space-item {
+        padding: 0 @padding-xs;
+        cursor: pointer;
+        &:hover {
+          background-color: @item-hover-bg;
+        }
+      }
+
+      .user-dropdown {
+        .ant-avatar {
+          position: relative;
+          top: -2px;
+          background-color: @primary-color;
+          margin-right: 5px;
+        }
+
+        .username {
+          font-size: @font-size-sm;
+        }
+      }
+    }
+
+    &--fix {
+      position: fixed;
+      top: 0;
+      z-index: 9;
+      width: 100%;
+    }
+  }
+}

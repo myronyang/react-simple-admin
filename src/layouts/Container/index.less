@@ -1,0 +1,45 @@
+@import '@/assets/styles/variables.less';
+
+.layout-wrap {
+
+  .site-sider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow: auto;
+    height: 100vh;
+  }
+
+  .site-layout {
+    min-height: 100vh;
+    transition: all 0.2s;
+
+    &-nesting {
+      &.layout-nesting__fixed {
+        width: 1200px;
+        margin: 0 auto;
+      }
+    }
+
+    &__fold {
+      margin-left: 80px !important;
+    }
+
+    &--side {
+      margin-left: 200px;
+    }
+
+    &--fixed {
+      margin-top: @layout-header-height;
+    }
+
+    &-content {
+      margin: @margin-lg;
+    }
+  }
+}
+
+.layout-container {
+  height: 100%;
+}
